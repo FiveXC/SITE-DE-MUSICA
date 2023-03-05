@@ -8,7 +8,6 @@ let areaSlide2 = document.querySelector('.areaSlide2')
 let areaArtistas = document.querySelector(".areaArtistas")
 let btnTopo = document.querySelector(".btnTopo")
 
-
 hamburguer.addEventListener("click", xmenu)
 function xmenu(event){
 hamburguer.classList.toggle("virarX")
@@ -19,59 +18,72 @@ titulo.classList.toggle("ExpandirMenu")
 
 window.onload = function(){
  
-if(screen.width <=  991.98){
+if(screen.width <=  575.98){
+    areaSobreNos.classList.add("aparecer")
+
+}
+document.documentElement.scrollTop = 0
+}
+
+
+if(screen.width <=  575.98){
+window.addEventListener("scroll", ()=>{
+    console.log(document.documentElement.scrollTop)
+  
+ if(document.documentElement.scrollTop > 1066){
+    areaArtistas.classList.add("aparecer")
+ }
+    
+else if(document.documentElement.scrollTop > 667){
+    PrincipaisProduções.classList.add("aparecer")
+}
+
+if(document.documentElement.scrollTop < 667){
+    PrincipaisProduções.classList.remove("aparecer")
+}
+else if(document.documentElement.scrollTop < 1066){
+    areaArtistas.classList.remove("aparecer")
+}
+
+})
+}
+
+
+if(screen.width >=  576 && screen.width <= 991.98){
     areaSobreNos.classList.add("aparecer")
     PrincipaisProduções.classList.add("aparecer")
     areaArtistas.classList.add("aparecer")
 }
-}
 
-let alturaDoWindow = window.innerHeight 
+if(screen.width >=  992){
+
 window.addEventListener("scroll", ()=>{
 
-
-if(document.documentElement.scrollTop > 1300){
-  areaArtistas.classList.add("aparecer")
+//APARECENDO========================================
+if(document.documentElement.scrollTop > 1200){
+    areaArtistas.classList.add("aparecer")
 }
- else if(document.documentElement.scrollTop >= 800){
+
+else if(document.documentElement.scrollTop > 796){
     PrincipaisProduções.classList.add("aparecer")
 }
-
-else if(document.documentElement.scrollTop >= 170){
+else if(document.documentElement.scrollTop > 394){
     areaSobreNos.classList.add("aparecer")
 }
 
+//DESAPARECENDO========================================
+if(document.documentElement.scrollTop < 394){
+    areaSobreNos.classList.remove("aparecer")
+}
+else if(document.documentElement.scrollTop < 796 ){
+    PrincipaisProduções.classList.remove("aparecer")
+}
+else if(document.documentElement.scrollTop < 1200){
+    areaArtistas.classList.remove("aparecer")
+}
+})
 
-
-if(document.documentElement.scrollTop < 170){
-  if(screen.width <=  991.98){
-    areaSobreNos.classList.add("aparecer")
-}else{
-  areaSobreNos.classList.remove("aparecer")
 }
-}
-
-else if(document.documentElement.scrollTop < 750){
-  if(screen.width <=  991.98){
-    areaSobreNos.classList.add("aparecer")
-}
-else{
-  PrincipaisProduções.classList.remove("aparecer")
-}
-}
-
-else if(document.documentElement.scrollTop < 1140){
-  if(screen.width <= 991.98){
-    areaSobreNos.classList.add("aparecer")
-}else{
-  areaArtistas.classList.remove("aparecer")
-}
-}
-
-  
-}
-
-)
 
 window.addEventListener("scroll", ()=>{
   if (document.documentElement.scrollTop > 800) {
@@ -81,6 +93,9 @@ window.addEventListener("scroll", ()=>{
     btnTopo.classList.remove("aparecer")
   }
 })
+
+
+
 
 let areaSlide = document.querySelector(".areaSlide");
 
