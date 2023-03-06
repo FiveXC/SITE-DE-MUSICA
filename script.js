@@ -94,48 +94,66 @@ window.addEventListener("scroll", ()=>{
   }
 })
 
-
-
-
 let areaSlide = document.querySelector(".areaSlide");
 
 $(document).ready(function(){
-    var slider = $(areaSlide);
+  var slider = $(areaSlide);
 
-slider.slick({
+  slider.slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3500,
+    arrows: false,
+    dots: false,
+    draggable: true,
+    pauseOnHover: true,
+  });
 
-slidesToShow: 1,/* define o número de slides a serem exibidos simultaneamente no slideshow.*/
-slidesToScroll: 1,/* define o número de slides que serão pulados*/ 
-autoplay: true,/*define se o slideshow deve ser reproduzido automaticamente ou não*/ 
-autoplaySpeed: 1000,//define o tempo em milissegundos entre cada transição de slide, quando o autoplay está ativado
-arrows: false,//define se as setas de navegação devem ser exibidas ou não.
-dots: false,//define se os pontos indicadores devem ser exibidos ou não.
-draggable: true//define se o usuário pode arrastar o slide com o mouse ou o toque.
-});
-  
-var resetInterval = function() {
-  clearInterval(interval);
-   interval = setInterval(function() {
+  var resetInterval = function() {
+    clearInterval(interval);
+    interval = setInterval(function() {
       slider.slick('slickNext');
     }, 2000);
   };
   
-var interval = setInterval(function() {
+  var interval = setInterval(function() {
     slider.slick('slickNext');
-}, 2000);
-  
-slider.on('mousedown', function() {
-resetInterval();
+  }, 2000);
+
+  slider.on('mousedown', function() {
+    clearInterval(interval);
+    slider.slick('slickPause');
+  });
+
+  slider.on('mouseup', function() {
+    resetInterval();
+  });
+
+  slider.on('touchstart', function() {
+    clearInterval(interval);
+    slider.slick('slickPause');
+  });
+
+  slider.on('touchend', function() {
+    resetInterval();
+  });
+
+  slider.on('keydown', function() {
+    resetInterval();
+  });
+
+  slider.on('beforeChange', function() {
+    slider.slick('slickPause');
+  });
+
+  slider.on('afterChange', function() {
+    slider.slick('slickPlay');
+  });
+
 });
-  
-slider.on('touchstart', function() {
-resetInterval();
-});
-  
-slider.on('keydown', function() {
-resetInterval();
-});
-});
+
+
 
 $('.areaSlide2').slick({
 infinite: false,
