@@ -17,7 +17,7 @@ titulo.classList.toggle("ExpandirMenu")
 
 window.onload = function(){
  
-if(screen.width <=  576){
+if(screen.width <  576){
     areaSobreNos.classList.add("aparecer")
 }
 document.documentElement.scrollTop = 0
