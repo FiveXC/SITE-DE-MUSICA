@@ -20,16 +20,15 @@ window.onload = function(){
  
 if(screen.width <=  700){
     areaSobreNos.classList.add("aparecer")
-
 }
 document.documentElement.scrollTop = 0
 }
 
 
-if(screen.width <=  700){
+if(screen.width <=  576.78){
 window.addEventListener("scroll", ()=>{
-
- if(document.documentElement.scrollTop > 1066){
+ 
+  if(document.documentElement.scrollTop > 1066){
     areaArtistas.classList.add("aparecer")
  }
     
@@ -45,6 +44,7 @@ else if(document.documentElement.scrollTop < 1066){
 }
 
 })
+ 
 }
 
 
