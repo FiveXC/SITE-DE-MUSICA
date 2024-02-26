@@ -25,6 +25,14 @@ if(screen.width <=  700){
 document.documentElement.scrollTop = 0
 }
 
+
+if(screen.width <=  700){
+window.addEventListener("scroll", ()=>{
+     areaArtistas.classList.add("aparecer")
+     PrincipaisProduções.classList.add("aparecer")
+     areaArtistas.classList.remove("aparecer")
+}
+
  if(document.documentElement.scrollTop > 1066){
     areaArtistas.classList.add("aparecer")
  }
