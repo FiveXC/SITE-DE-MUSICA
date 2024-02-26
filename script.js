@@ -20,7 +20,7 @@ window.onload = function(){
 if(screen.width <  575.98){
     areaSobreNos.classList.add("aparecer")
     PrincipaisProduções.classList.add("aparecer")
-    areaArtistas.classList.remove("aparecer")
+    areaArtistas.classList.add("aparecer")
 }
 document.documentElement.scrollTop = 0
 }
