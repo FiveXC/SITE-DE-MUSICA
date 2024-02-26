@@ -17,33 +17,12 @@ titulo.classList.toggle("ExpandirMenu")
 
 window.onload = function(){
  
-if(screen.width <  576){
+if(screen.width <  575.98){
     areaSobreNos.classList.add("aparecer")
-  
-}
-document.documentElement.scrollTop = 0
-}
-
-if(screen.width <=  575.98){
-window.addEventListener("scroll", ()=>{
- 
-  if(document.documentElement.scrollTop > 1066){
-    areaArtistas.classList.add("aparecer")
- }
-    
-else if(document.documentElement.scrollTop > 667){
     PrincipaisProduções.classList.add("aparecer")
-}
-
-if(document.documentElement.scrollTop < 667){
-    PrincipaisProduções.classList.remove("aparecer")
-}
-else if(document.documentElement.scrollTop < 1066){
     areaArtistas.classList.remove("aparecer")
 }
-
-})
- 
+document.documentElement.scrollTop = 0
 }
 
 if(screen.width >=  576 && screen.width <= 991.98){
