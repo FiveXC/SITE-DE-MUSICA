@@ -18,14 +18,14 @@ titulo.classList.toggle("ExpandirMenu")
 
 window.onload = function(){
  
-if(screen.width <=  700){
+if(screen.width <=  576.98){
     areaSobreNos.classList.add("aparecer")
 }
 document.documentElement.scrollTop = 0
 }
 
 
-if(screen.width <=  576.78){
+if(screen.width <=  576.98){
 window.addEventListener("scroll", ()=>{
  
   if(document.documentElement.scrollTop > 1066){
