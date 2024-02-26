@@ -18,7 +18,7 @@ titulo.classList.toggle("ExpandirMenu")
 
 
 
-if(screen.width >=  280 && screen.width <= 991.98){
+if(screen.width >=  576 && screen.width <= 991.98){
     areaSobreNos.classList.add("aparecer")
     PrincipaisProduções.classList.add("aparecer")
     areaArtistas.classList.add("aparecer")
