@@ -15,8 +15,13 @@ navmenu.classList.toggle("ExpandirMenu")
 titulo.classList.toggle("ExpandirMenu")
 }
 
-
-
+window.onload = function(){
+ 
+if(screen.width <=  576){
+    areaSobreNos.classList.add("aparecer")
+}
+document.documentElement.scrollTop = 0
+}
 
 if(screen.width >=  576 && screen.width <= 991.98){
     areaSobreNos.classList.add("aparecer")
