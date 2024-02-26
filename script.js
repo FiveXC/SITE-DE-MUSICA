@@ -18,18 +18,13 @@ titulo.classList.toggle("ExpandirMenu")
 
 window.onload = function(){
  
-if(screen.width <=  575.98){
+if(screen.width <=  700){
     areaSobreNos.classList.add("aparecer")
 
 }
 document.documentElement.scrollTop = 0
 }
 
-
-if(screen.width <=  575.98){
-window.addEventListener("scroll", ()=>{
-    console.log(document.documentElement.scrollTop)
-  
  if(document.documentElement.scrollTop > 1066){
     areaArtistas.classList.add("aparecer")
  }
